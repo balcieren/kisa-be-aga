@@ -11,7 +11,7 @@ fastify.register(fastifySensible);
 fastify.register(urlRoute, { prefix: "/api/url" });
 
 fastify.get("/", async () => {
-  return { msg: "hello" };
+  return "KISA BE AGA 🤣";
 });
 
 fastify.listen(3000).catch((err) => {
