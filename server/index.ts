@@ -6,9 +6,10 @@ import { PrismaClient } from "@prisma/client";
 
 const fastify: FastifyInstance = Fastify({ logger: { prettyPrint: true } });
 
-fastify.register(fastifyPrisma);
-fastify.register(fastifySensible);
-fastify.register(urlRoute, { prefix: "/api/url" });
+fastify
+  .register(fastifyPrisma)
+  .register(fastifySensible)
+  .register(urlRoute, { prefix: "/api/url" });
 
 fastify.get("/", async () => {
   return "KISA BE AGA 🤣";
