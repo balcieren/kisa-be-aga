@@ -50,7 +50,7 @@ const createShortUrl: RouteHandler<{ Body: CreateShortUrlBody }> = async (
     data: { url, shortId: shortid.generate() },
   });
 
-  reply.send({ shortId: newShortUrl.shortId });
+  return reply.send({ shortId: newShortUrl.shortId });
 };
 
 export default { redirectToShortUrl, getShortUrlStatus, createShortUrl };
