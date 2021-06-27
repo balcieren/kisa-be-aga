@@ -1,4 +1,4 @@
-import { CreateShortUrlBody, GetShortUrlParams } from "../dto/url.dto";
+import { CreateShortUrlBody, GetShortUrlParams } from "../dtos/url.dto";
 import { RouteHandler } from "fastify";
 import shortid from "shortid";
 
