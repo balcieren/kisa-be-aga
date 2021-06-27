@@ -5,3 +5,8 @@
 - [x] Plugins
 - [x] Routes
 - [ ] Schema Validation
+
+### TASKS FOR WEB
+
+- [ ] Structure
+- [ ] Design
