@@ -1,0 +1,27 @@
+{
+  "name": "kisa-be-aga-server",
+  "version": "0.0.1",
+  "description": "server",
+  "main": "index.ts",
+  "author": "Eren BALCI",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "ts-node-dev index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.5",
+    "@types/shortid": "^0.0.29",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.25.0",
+    "fastify": "^3.18.0",
+    "fastify-plugin": "^3.0.0",
+    "fastify-sensible": "^3.1.1",
+    "pino-pretty": "^5.1.0",
+    "prisma": "^2.25.0",
+    "shortid": "^2.2.16"
+  }
+}
