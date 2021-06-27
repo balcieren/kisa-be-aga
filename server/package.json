@@ -5,7 +5,7 @@
   "main": "index.ts",
   "author": "Eren BALCI",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "ts-node-dev index.ts"
   },
