@@ -5,7 +5,7 @@
 - [x] Controllers
 - [x] Plugins
 - [x] Routes
-- [ ] Schema Validation
+- [x] Schema Validation
 
 ### TASKS FOR WEB
 
