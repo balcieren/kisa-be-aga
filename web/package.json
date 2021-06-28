@@ -1,0 +1,31 @@
+{
+  "name": "kisa-be-aga",
+  "version": "0.0.1",
+  "description": "client",
+  "main": "index.js",
+  "author": "Eren BALCI",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "next start",
+    "dev": "next dev",
+    "build": "next build"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-transition-group": "^4.4.2",
+    "react-use": "^17.2.4",
+    "styled-components": "^5.3.0",
+    "zustand": "^3.5.4"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "@types/styled-components": "^5.1.10",
+    "typescript": "^4.3.4"
+  }
+}
