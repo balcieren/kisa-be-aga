@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client";
-import { PrismaClientOptions } from "@prisma/client/runtime";
 import { FastifyPluginCallback } from "fastify";
 import fp from "fastify-plugin";
+import { PrismaClient } from "@prisma/client";
+import { PrismaClientOptions } from "@prisma/client/runtime";
 
 const fastifyPrisma: FastifyPluginCallback<PrismaClientOptions> = (
   fastify,
