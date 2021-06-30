@@ -1,7 +1,6 @@
 import Fastify, { FastifyInstance } from "fastify";
-import { PrismaClient } from "@prisma/client";
 import fastifySensible from "fastify-sensible";
-import fastifyPrisma from "./plugins/prisma.plugin";
+import fastifyPrisma from "fastify-prisma-client";
 import urlRoute from "./routes/url.route";
 import schemaValidator from "./middlewares/validator.middleware";
 
@@ -14,13 +13,7 @@ fastify
   .setValidatorCompiler(schemaValidator);
 
 fastify.get("/", async () => {
-  return "KISA BE AGA 🤣";
+  return "hello";
 });
 
 fastify.listen(3000).catch((err) => fastify.log.error(err));
-
-declare module "fastify" {
-  interface FastifyRequest {
-    prisma: PrismaClient;
-  }
-}
