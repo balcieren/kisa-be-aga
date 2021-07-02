@@ -1,6 +1,6 @@
 import fastifyBuild from "../index";
 
-test("GET `api/url/123/` - Redirect to Url'", () => {
+test("GET `api/url/123` - Redirect to Url'", () => {
   const fastify = fastifyBuild();
   return fastify
     .inject()
