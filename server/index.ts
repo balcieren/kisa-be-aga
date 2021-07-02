@@ -4,16 +4,21 @@ import fastifyPrisma from "fastify-prisma-client";
 import urlRoute from "./routes/url.route";
 import schemaValidator from "./middlewares/validator.middleware";
 
-const fastify: FastifyInstance = Fastify({ logger: { prettyPrint: true } });
+const buildFastify = () => {
+  const fastify: FastifyInstance = Fastify({ logger: { prettyPrint: true } });
+  fastify
+    .register(fastifyPrisma)
+    .register(fastifySensible)
+    .register(urlRoute, { prefix: "/api/url" })
+    .setValidatorCompiler(schemaValidator);
 
-fastify
-  .register(fastifyPrisma)
-  .register(fastifySensible)
-  .register(urlRoute, { prefix: "/api/url" })
-  .setValidatorCompiler(schemaValidator);
+  fastify.get("/", async () => {
+    return "KISA BE AGA !";
+  });
 
-fastify.get("/", async () => {
-  return "hello";
-});
+  return fastify;
+};
 
-fastify.listen(3000).catch((err) => fastify.log.error(err));
+buildFastify().listen(3000);
+
+export default buildFastify;
