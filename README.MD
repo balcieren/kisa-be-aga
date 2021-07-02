@@ -6,6 +6,7 @@
 - [x] Plugins
 - [x] Routes
 - [x] Schema Validation
+- [x] Tests
 
 ### TASKS FOR WEB
 
