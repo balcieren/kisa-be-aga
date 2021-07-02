@@ -20,7 +20,7 @@ test("GET `api/url/123/status` - Get Url's Status'", () => {
     });
 });
 
-test("POST `api/url` - Get Url's Status'", () => {
+test("POST `api/url` - Create Url'", () => {
   const fastify = fastifyBuild();
   return fastify
     .inject()
