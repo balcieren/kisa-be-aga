@@ -5,7 +5,9 @@ import urlRoute from "./routes/url.route";
 import schemaValidator from "./middlewares/validator.middleware";
 
 const buildFastify = () => {
-  const fastify: FastifyInstance = Fastify({ logger: { prettyPrint: true } });
+  const fastify: FastifyInstance = Fastify({
+    logger: { level: "info", prettyPrint: true },
+  });
   fastify
     .register(fastifyPrisma)
     .register(fastifySensible)
