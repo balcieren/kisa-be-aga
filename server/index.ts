@@ -1,6 +1,7 @@
 import Fastify, { FastifyInstance } from "fastify";
 import fastifySensible from "fastify-sensible";
 import fastifyPrisma from "fastify-prisma-client";
+import fastifyCors from "fastify-cors";
 import urlRoute from "./routes/url.route";
 import schemaValidator from "./middlewares/validator.middleware";
 
@@ -9,6 +10,7 @@ const buildFastify = () => {
     logger: { level: "info", prettyPrint: true },
   });
   fastify
+    .register(fastifyCors)
     .register(fastifyPrisma)
     .register(fastifySensible)
     .register(urlRoute, { prefix: "/api/url" })
@@ -21,6 +23,6 @@ const buildFastify = () => {
   return fastify;
 };
 
-buildFastify().listen(3000);
+buildFastify().listen(3001);
 
 export default buildFastify;
