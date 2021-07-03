@@ -1,8 +1,9 @@
 import Fastify, { FastifyInstance } from "fastify";
+import fastifyCors from "fastify-cors";
 import fastifySensible from "fastify-sensible";
 import fastifyPrisma from "fastify-prisma-client";
-import urlRoute from "./routes/url.route";
 import { fastifyYupSchema } from "fastify-yup-schema";
+import urlRoute from "./routes/url.route";
 
 const buildFastify = () => {
   const fastify: FastifyInstance = Fastify({
@@ -10,6 +11,7 @@ const buildFastify = () => {
   });
 
   fastify
+    .register(fastifyCors)
     .register(fastifyPrisma)
     .register(fastifySensible)
     .register(fastifyYupSchema)
