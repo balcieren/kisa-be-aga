@@ -13,8 +13,8 @@ const buildFastify = () => {
   fastify
     .register(fastifyCors)
     .register(fastifyPrisma)
-    .register(fastifySensible)
     .register(fastifyYupSchema)
+    .register(fastifySensible)
     .register(urlRoute, { prefix: "/api/url" });
 
   fastify.get("/", async () => {
@@ -24,6 +24,6 @@ const buildFastify = () => {
   return fastify;
 };
 
-buildFastify().listen(3000);
+buildFastify().listen(3001);
 
 export default buildFastify;
