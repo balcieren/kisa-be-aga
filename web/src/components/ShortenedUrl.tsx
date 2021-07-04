@@ -23,7 +23,7 @@ const ShortenedUrl: React.FC<Props> = ({ shortId }) => {
     onCopy();
 
     toast({
-      title: 'Hata',
+      title: 'Başarılı',
       description: 'URL panoya kopyalandı',
       duration: 3000,
       status: 'success',
