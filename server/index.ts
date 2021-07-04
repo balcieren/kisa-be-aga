@@ -2,7 +2,6 @@ import Fastify, { FastifyInstance } from "fastify";
 import fastifyCors from "fastify-cors";
 import fastifySensible from "fastify-sensible";
 import fastifyPrisma from "fastify-prisma-client";
-import fastifyCors from "fastify-cors";
 import { fastifyYupSchema } from "fastify-yup-schema";
 import urlRoute from "./routes/url.route";
 
