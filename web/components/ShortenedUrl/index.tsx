@@ -19,7 +19,10 @@ const ShortenedUrl: FC<ShortenedUrlProps> = ({ shortId }) => {
   return (
     !!shortId && (
       <Container>
-        <h1>kisabea.ga/{shortId}</h1>
+        <h1>
+          {process.env.WEB_URL}
+          {shortId}
+        </h1>
         <button onClick={copyUrl}>
           <RiLinksFill size={24} />
         </button>
