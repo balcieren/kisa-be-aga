@@ -21,6 +21,7 @@ const HomePage: NextPage = () => {
     <Container>
       <div>
         <Heading>KISA BE AGA</Heading>
+        <Heading>BUG FIXES</Heading>
         <InputWithButton
           onChange={({ target }) => setInputText(target.value)}
           placeholder="https://..."
