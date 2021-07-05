@@ -10,5 +10,7 @@
 
 ### TASKS FOR WEB
 
-- [ ] Structure
-- [ ] Design
+- [x] Structure
+- [x] Design
+- [ ] Services
+- [ ] Fixed Bugs
