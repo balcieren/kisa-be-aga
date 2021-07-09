@@ -1,8 +1,8 @@
-import { CreateShortUrlBody, GetShortUrlParams } from "../dtos/url.dto";
+import { UrlBodyType, UrlParamsType } from "../dtos/url.dto";
 import { RouteHandler } from "fastify";
 import shortid from "shortid";
 
-const redirectToShortUrl: RouteHandler<{ Params: GetShortUrlParams }> = async (
+const redirectToShortUrl: RouteHandler<{ Params: UrlParamsType }> = async (
   request,
   reply
 ) => {
@@ -23,7 +23,7 @@ const redirectToShortUrl: RouteHandler<{ Params: GetShortUrlParams }> = async (
   return reply.redirect(found.url);
 };
 
-const getShortUrlStatus: RouteHandler<{ Params: GetShortUrlParams }> = async (
+const getShortUrlStatus: RouteHandler<{ Params: UrlParamsType }> = async (
   request,
   reply
 ) => {
@@ -38,7 +38,7 @@ const getShortUrlStatus: RouteHandler<{ Params: GetShortUrlParams }> = async (
   return reply.send(found);
 };
 
-const createShortUrl: RouteHandler<{ Body: CreateShortUrlBody }> = async (
+const createShortUrl: RouteHandler<{ Body: UrlBodyType }> = async (
   request,
   reply
 ) => {

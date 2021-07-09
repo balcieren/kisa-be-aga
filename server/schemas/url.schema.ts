@@ -1,13 +1,8 @@
-import { createYupSchema } from "fastify-yup-schema";
+import { FastifySchema } from "fastify";
+import { urlBody, urlParams } from "../dtos/url.dto";
 
-export const redirectToShortUrlSchema = createYupSchema((yup) => ({
-  params: yup.object({ shortid: yup.string().required() }).required(),
-}));
+export const redirectToShortUrlSchema: FastifySchema = { params: urlParams };
 
-export const getShortUrlStatusSchema = createYupSchema((yup) => ({
-  params: yup.object({ shortid: yup.string().required() }).required(),
-}));
+export const getShortUrlStatusSchema: FastifySchema = { params: urlParams };
 
-export const createShortUrlSchema = createYupSchema((yup) => ({
-  body: yup.object({ url: yup.string().url().required() }).required(),
-}));
+export const createShortUrlSchema: FastifySchema = { body: urlBody };

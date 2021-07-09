@@ -1,8 +1,8 @@
 import Fastify, { FastifyInstance } from "fastify";
 import fastifyCors from "fastify-cors";
+import fastifySwagger from "fastify-swagger";
 import fastifySensible from "fastify-sensible";
 import fastifyPrisma from "fastify-prisma-client";
-import { fastifyYupSchema } from "fastify-yup-schema";
 import urlRoute from "./routes/url.route";
 
 const buildFastify = () => {
@@ -12,13 +12,24 @@ const buildFastify = () => {
 
   fastify
     .register(fastifyCors)
-    .register(fastifyPrisma)
-    .register(fastifyYupSchema)
+    .register(fastifySwagger, {
+      exposeRoute: true,
+      routePrefix: "/docs",
+      staticCSP: true,
+      swagger: {
+        info: {
+          title: "KISA BE AGA",
+          description: "Testing the KISA BE AGA swagger API",
+          version: "0.1.0",
+        },
+      },
+    })
+    .register(fastifyPrisma, { logLevel: "debug" })
     .register(fastifySensible)
     .register(urlRoute, { prefix: "/api/url" });
 
-  fastify.get("/", async () => {
-    return "KISA BE AGA !";
+  fastify.get("/", async (request, reply) => {
+    reply.send({ message: "KISA BE AGA !" });
   });
 
   return fastify;
