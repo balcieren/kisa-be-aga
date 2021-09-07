@@ -8,6 +8,7 @@
    "private": false,
    "scripts": {
       "dev": "ts-node-dev --no-notify --exit-child --respawn --transpile-only --clear ./src/main.ts",
+      "start":"node ./dist/main.js",
       "build": "tsc",
       "test": "jest"
    },
