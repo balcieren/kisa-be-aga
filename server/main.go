@@ -68,11 +68,15 @@ func main() {
 		return c.JSON(fiber.Map{"message": "Server has stared."})
 	})
 
-	v1 := app.Group("/api/v1")
+	v1 := app.Group("/api/v1/url")
 
 	v1.Get("/:shortid", func(c *fiber.Ctx) error {
 		u := Url{}
-		db.Model(&Url{}).First(&u, "short_id = ?", c.Params("shortid"))
+		result := db.Model(&Url{}).First(&u, "short_id = ?", c.Params("shortid"))
+
+		if result.Error != nil {
+			return c.Status(fiber.StatusNotFound).JSON(fiber.Map{"message": "Url has not found"})
+		}
 
 		return c.Redirect(u.Url)
 	})
