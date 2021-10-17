@@ -74,7 +74,7 @@ func main() {
 		u := Url{}
 		db.Model(&Url{}).First(&u, "short_id = ?", c.Params("shortid"))
 
-		return c.JSON(u)
+		return c.Redirect(u.Url)
 	})
 
 	v1.Post("/", func(c *fiber.Ctx) error {
