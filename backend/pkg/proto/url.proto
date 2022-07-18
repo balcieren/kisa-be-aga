@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package entpb;
+
+option go_package = "backend/pkg/proto";
+
+message Url {
+  string id = 1;
+
+  string short_id = 2;
+
+  string url = 3;
+
+  string created_at = 4;
+}
+
+message CreateUrlRequest {
+  string url = 1;
+}
+
+message GetUrlRequest {
+  string short_id = 1;
+}
+
+service UrlService {
+  rpc Create ( CreateUrlRequest ) returns ( Url );
+
+  rpc Get ( GetUrlRequest ) returns ( Url );
+}
