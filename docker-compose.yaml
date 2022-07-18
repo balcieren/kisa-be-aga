@@ -1,0 +1,14 @@
+services:
+  postgresql_database:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=kisa-be-aga
+    ports:
+      - "8080:5432"
+    restart: always
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+volumes:
+  database-data:
