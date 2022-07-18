@@ -11,10 +11,7 @@ import (
 )
 
 func Start() {
-	c, err := config.New()
-	if err != nil {
-		panic(err)
-	}
+	c := config.New()
 
 	db, err := database.NewPostgreSQL(c.UrlServiceDatabaseUrl)
 	if err != nil {
