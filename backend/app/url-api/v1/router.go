@@ -7,13 +7,12 @@ import (
 )
 
 type Router struct {
-	swagger, url fiber.Router
-	handler      *handler.Handler
+	url     fiber.Router
+	handler *handler.Handler
 }
 
 func NewRouter(app *fiber.App, h *handler.Handler) *Router {
 	return &Router{
-		swagger: app.Group("/v1/swagger"),
 		url:     app.Group("/v1/urls"),
 		handler: h,
 	}
