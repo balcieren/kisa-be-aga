@@ -21,7 +21,7 @@ func Start() {
 		panic(err)
 	}
 
-	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%s", c.UrlServicePort))
+	lis, err := net.Listen("tcp", ":"+c.UrlServicePort)
 
 	if err != nil {
 		panic(err)
@@ -33,6 +33,6 @@ func Start() {
 		db: db,
 	})
 
-	println(fmt.Sprintf("Service has started on localhost:%s", c.UrlServicePort))
+	println(fmt.Sprintf("Service has started on :%s", c.UrlServicePort))
 	panic(srv.Serve(lis))
 }

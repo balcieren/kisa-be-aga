@@ -14,7 +14,7 @@ type Service struct {
 }
 
 func New(c *config.Config) (*Service, error) {
-	conn, err := grpc.Dial(fmt.Sprintf("localhost:%s", c.UrlServicePort), grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.Dial(fmt.Sprintf("url-svc:%s", c.UrlServicePort), grpc.WithTransportCredentials(insecure.NewCredentials()))
 
 	urlServiceClient := proto.NewUrlServiceClient(conn)
 
