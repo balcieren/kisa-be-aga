@@ -1,14 +1,49 @@
 services:
+  url-api-gw:
+    container_name: url-api-gw
+    build:
+      context: ./backend
+      dockerfile: api-gw.Dockerfile
+
+    environment:
+      - URL_API_PORT=8080
+      - URL_SERVICE_PORT=18081
+    ports:
+      - "8080:8080"
+    networks:
+      - kisa-be-aga
+    depends_on:
+      - url-svc
+
+  url-svc:
+    container_name: url-svc
+    build:
+      context: ./backend
+      dockerfile: url-svc.Dockerfile
+    environment:
+      - URL_SERVICE_PORT=18081
+      - URL_SERVICE_DATABASE_URL=postgresql://postgres:postgres@url-database/kisa-be-aga?sslmode=disable
+    networks:
+      - kisa-be-aga
+    depends_on:
+      - postgresql_database
+
   postgresql_database:
+    container_name: url-database
     image: postgres:latest
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=1234
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=kisa-be-aga
     ports:
-      - "8080:5432"
+      - "5432:5432"
     restart: always
+    networks:
+      - kisa-be-aga
     volumes:
       - database-data:/var/lib/postgresql/data/
 volumes:
   database-data:
+
+networks:
+  kisa-be-aga:
