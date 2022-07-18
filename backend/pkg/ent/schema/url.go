@@ -21,7 +21,8 @@ func (Url) Fields() []ent.Field {
 			Default(uuid.New),
 		field.String("short_id").
 			Unique(),
-		field.String("url").Match(regexp.MustCompile(`https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)`)),
+		field.String("url").
+			Match(regexp.MustCompile(`https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)`)),
 		field.Time("created_at").
 			Default(time.Now),
 	}
