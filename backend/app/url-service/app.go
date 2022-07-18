@@ -1,7 +1,7 @@
 package urlservice
 
 import (
-	"backend/internal/url-service/database"
+	"backend/app/url-service/database"
 	"backend/pkg/config"
 	"backend/pkg/proto"
 	"fmt"

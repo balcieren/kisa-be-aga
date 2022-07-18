@@ -1,8 +1,8 @@
 package urlapi
 
 import (
-	"backend/internal/url-api/helper"
-	v1 "backend/internal/url-api/v1"
+	"backend/app/url-api/helper"
+	v1 "backend/app/url-api/v1"
 	"backend/pkg/config"
 	"context"
 	"fmt"

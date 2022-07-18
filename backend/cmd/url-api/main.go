@@ -1,8 +1,8 @@
 package main
 
 import (
-	urlapi "backend/internal/url-api"
-	v1 "backend/internal/url-api/v1"
+	urlapi "backend/app/url-api"
+	v1 "backend/app/url-api/v1"
 	"backend/pkg/config"
 	"backend/pkg/logger"
 

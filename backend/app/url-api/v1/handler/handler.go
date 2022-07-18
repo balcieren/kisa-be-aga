@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"backend/internal/url-api/v1/service"
+	"backend/app/url-api/v1/service"
 	"backend/pkg/config"
 )
 

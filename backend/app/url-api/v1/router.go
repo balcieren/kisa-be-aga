@@ -1,7 +1,7 @@
 package v1
 
 import (
-	"backend/internal/url-api/v1/handler"
+	"backend/app/url-api/v1/handler"
 
 	"github.com/gofiber/fiber/v2"
 )

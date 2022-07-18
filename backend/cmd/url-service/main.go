@@ -1,7 +1,7 @@
 package main
 
 import (
-	urlservice "backend/internal/url-service"
+	urlservice "backend/app/url-service"
 )
 
 func main() {

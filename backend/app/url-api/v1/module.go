@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"backend/internal/url-api/v1/handler"
-	"backend/internal/url-api/v1/service"
+	"backend/app/url-api/v1/handler"
+	"backend/app/url-api/v1/service"
 
 	"go.uber.org/fx"
 )
